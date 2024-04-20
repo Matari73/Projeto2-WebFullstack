@@ -5,11 +5,13 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function SelectOption() {
+function SelectOption({ onChange }) {
   const [option, setOption] = React.useState('people');
 
   const handleChange = (event) => {
-    setOption(event.target.value);
+    const selectedOption = event.target.value;
+    setOption(selectedOption);
+    onChange(selectedOption);
   };
 
   return (
