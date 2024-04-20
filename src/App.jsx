@@ -14,7 +14,7 @@ function App() {
         <Box sx={{ bgcolor: '#ffffff', height: '100vh' }}>
           <Logo />
           <Search />
-        </Box> 
+        </Box>
       </Container>
     </React.Fragment>
   );
