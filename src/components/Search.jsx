@@ -35,6 +35,7 @@ function Search() {
 
             fetchData();
         } else {
+            setSearchResults('');
             setError(true);
         }
     };
@@ -43,7 +44,11 @@ function Search() {
         <>
             <SelectOption onChange={handleSearchOptionChange} />
             <Input onChange={handleSearchTextChange} onSearch={handleSearch} />
-            {error && <p>É necessário inserir um nome.</p>}
+            {error && (
+                <p style={{ textAlign: 'center' }}>
+                    É necessário inserir um nome.
+                </p>
+            )}
             <Item data={searchResults} onSearch={handleSearch} />
         </>
     );

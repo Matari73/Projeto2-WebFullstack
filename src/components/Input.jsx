@@ -16,17 +16,20 @@ function Input({ onChange, onSearch }) {
     };
 
     return (
-        <div>
-            <TextField
-                id="outlined-basic"
-                label="Enter a name"
-                variant="outlined"
-                value={searchText}
-                onChange={handleInputChange}
-            />
-            <Stack spacing={2} direction="row">
+        <div style={{ textAlign: 'center' }}>
+            <div style={{ margin: '0 auto', display: 'inline-block' }}>
+                <TextField
+                    id="outlined-basic"
+                    label="Enter a name"
+                    variant="outlined"
+                    value={searchText}
+                    onChange={handleInputChange}
+                    style={{ margin: '10px auto', display: 'block', }}
+                />
+            </div>
+            <Stack spacing={2} direction="row" justifyContent="center">
                 <Button
-                    style={{ backgroundColor: '#e5b13a' }}
+                    style={{ backgroundColor: '#e5b13a', margin: '15px auto' }}
                     variant="contained"
                     onClick={handleSearchClick}
                 >

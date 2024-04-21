@@ -10,7 +10,9 @@ function Item({ data }) {
     }
 
     if (data.results.length === 0) {
-        return <div>Nenhum item encontrado.</div>;
+        return <div style={{ textAlign: 'center' }}>
+            Nenhum item encontrado.
+        </div>;
     }
 
     return (

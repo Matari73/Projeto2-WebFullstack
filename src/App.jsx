@@ -11,7 +11,7 @@ function App() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#ffffff', height: '100vh' }}>
+        <Box sx={{ bgcolor: '#ffffff', height: '60vh' }}>
           <Logo />
           <Search />
         </Box>

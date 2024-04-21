@@ -15,8 +15,8 @@ function SelectOption({ onChange }) {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <FormControl sx={{ minWidth: 120, textAlign: 'center' }}>
         <InputLabel id="demo-simple-select-label">Option</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -24,6 +24,7 @@ function SelectOption({ onChange }) {
           value={option}
           label="Option"
           onChange={handleChange}
+          sx={{ minWidth: 232 }}
         >
           <MenuItem value="people">People</MenuItem>
           <MenuItem value="planets">Planets</MenuItem>
