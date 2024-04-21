@@ -1,8 +1,14 @@
-# React + Vite
+#  Projeto 2 - Programação Web Fullstack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- O Projeto 2 da disciplina Programação Web Fullstack trata-se do desenvolvimento da camada Frontend de uma aplicação web, utilizando a biblioteca React.js. O Projeto 2 deve reimplementar as funcionalidades do Projeto 1, mas utilizando a biblioteca React.js.
 
-Currently, two official plugins are available:
+## Ferramentas utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Estrutura de projeto feita com Vite.
+- Hook: Além do useState, foi utilizado o useMemo.
+- Biblioteca: https://mui.com/material-ui/.
+- API externa: https://swapi.dev/.
+
+## Integrante
+
+  - Mariana de Oliveira
