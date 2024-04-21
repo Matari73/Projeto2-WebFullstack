@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import SelectOption from './SelectOption';
 import Input from './Input';
 import Item from './Item';
@@ -18,38 +18,38 @@ function Search() {
         setSearchText(text);
     };
 
-    const handleSearch = () => {
-        if (searchText.trim() !== '') {
-            const fetchData = async () => {
-                try {
+    const memoizedHandleSearch = useMemo(() => {
+        const fetchData = async () => {
+            try {
+                if (searchText.trim() !== '') {
                     const url = `https://swapi.dev/api/${searchOption}/?search=${searchText}`;
                     const response = await fetch(url);
                     const data = await response.json();
                     setSearchResults(data);
                     setError(false);
-                } catch (error) {
-                    console.error('Erro ao buscar dados:', error);
+                } else {
+                    setSearchResults('');
                     setError(true);
                 }
-            };
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+                setError(true);
+            }
+        };
 
-            fetchData();
-        } else {
-            setSearchResults('');
-            setError(true);
-        }
-    };
+        return fetchData;
+    }, [searchOption, searchText]);
 
     return (
         <>
             <SelectOption onChange={handleSearchOptionChange} />
-            <Input onChange={handleSearchTextChange} onSearch={handleSearch} />
+            <Input onChange={handleSearchTextChange} onSearch={memoizedHandleSearch} />
             {error && (
                 <p style={{ textAlign: 'center' }}>
                     É necessário inserir um nome.
                 </p>
             )}
-            <Item data={searchResults} onSearch={handleSearch} />
+            <Item data={searchResults} onSearch={memoizedHandleSearch} />
         </>
     );
 }
