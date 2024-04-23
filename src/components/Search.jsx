@@ -22,7 +22,7 @@ function Search() {
         const fetchData = async () => {
             try {
                 if (searchText.trim() !== '') {
-                    const url = `https://swapi.dev/api/${searchOption}/?search=${searchText}`;
+                    const url = `https://swapi.py4e.com/api/${searchOption}/?search=${searchText}`;
                     const response = await fetch(url);
                     const data = await response.json();
                     setSearchResults(data);
