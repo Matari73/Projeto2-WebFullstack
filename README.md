@@ -7,7 +7,7 @@
 - Estrutura de projeto feita com Vite.
 - Hook: Além do useState, foi utilizado o useMemo.
 - Biblioteca: https://mui.com/material-ui/.
-- API externa: https://swapi.dev/.
+- API externa: https://swapi.py4e.com/.
 
 ## Integrante
 
