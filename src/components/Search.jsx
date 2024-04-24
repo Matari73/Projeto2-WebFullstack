@@ -1,17 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import SelectOption from './SelectOption';
 import Input from './Input';
 import Item from './Item';
+import { SearchContext } from '../context/SearchContext'; 
 
 function Search() {
-    const [searchOption, setSearchOption] = useState('people');
-    const [searchText, setSearchText] = useState('');
+    const { search, setSearch } = useContext(SearchContext); 
     const [searchResults, setSearchResults] = useState(null);
     const [error, setError] = useState(false);
 
-
     const handleSearchOptionChange = (option) => {
-        setSearchOption(option);
+        setSearch(option); 
     };
 
     const handleSearchTextChange = (text) => {
@@ -21,8 +20,8 @@ function Search() {
     const memoizedHandleSearch = useMemo(() => {
         const fetchData = async () => {
             try {
-                if (searchText.trim() !== '') {
-                    const url = `https://swapi.py4e.com/api/${searchOption}/?search=${searchText}`;
+                if (search.text.trim() !== '') {
+                    const url = `https://swapi.py4e.com/api/${search.option}/?search=${search.text}`;
                     const response = await fetch(url);
                     const data = await response.json();
                     setSearchResults(data);
@@ -38,7 +37,7 @@ function Search() {
         };
 
         return fetchData;
-    }, [searchOption, searchText]);
+    }, [search]);
 
     return (
         <>
